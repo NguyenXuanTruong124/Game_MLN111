@@ -6,14 +6,10 @@ TagManager:
   tags:
   - Gem
   - Enemy
-  - Bullet
   - Key
-  - Trap
-  - DieTrap
-  - EnemyBullet
-  - Boss
   - Heal
-  - Invisible
+  - Food
+  - Cloth
   layers:
   - Default
   - TransparentFX
