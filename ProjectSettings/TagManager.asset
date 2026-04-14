@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Gem
+  - Enemy
+  - Bullet
+  - Key
+  - Trap
+  - DieTrap
+  - EnemyBullet
+  - Boss
+  - Heal
+  - Invisible
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Items
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2421248713
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3217049797
+    locked: 0
+  - name: Ground
+    uniqueID: 3212947659
+    locked: 0
+  - name: Enemy
+    uniqueID: 1021103339
+    locked: 0
+  - name: Player
+    uniqueID: 3487488139
+    locked: 0
+  - name: Items
+    uniqueID: 2236799083
+    locked: 0
+  - name: UI
+    uniqueID: 1998360871
+    locked: 0
+  m_RenderingLayers:
+  - Default
