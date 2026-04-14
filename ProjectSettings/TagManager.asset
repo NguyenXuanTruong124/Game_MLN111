@@ -10,6 +10,8 @@ TagManager:
   - Heal
   - Food
   - Cloth
+  - Trap
+  - Ground
   layers:
   - Default
   - TransparentFX
