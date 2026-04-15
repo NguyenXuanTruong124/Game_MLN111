@@ -293783,6 +293783,10 @@ PrefabInstance:
       propertyPath: clothText
       value: 
       objectReference: {fileID: 2087175303}
+    - target: {fileID: 4486629758898328845, guid: c9dce799581bdc74ba639ab66677d653, type: 3}
+      propertyPath: requiredCoinCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4573769991961784320, guid: c9dce799581bdc74ba639ab66677d653, type: 3}
       propertyPath: m_Value
       value: 100

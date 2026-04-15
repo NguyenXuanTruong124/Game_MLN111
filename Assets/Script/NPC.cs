@@ -6,6 +6,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private float interactionDistance = 2f;
     
     private bool playerInRange = false;
+    private bool hasInteracted = false; // Track xem đã tương tác chưa
     private Transform playerTransform;
     private NPCDialogUI dialogUI;
     private SpriteRenderer spriteRenderer;
@@ -38,6 +39,9 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
+        // Nếu đã tương tác rồi thì return
+        if (hasInteracted) return;
+        
         if (playerTransform == null || npcData == null || dialogUI == null) return;
 
         // Kiểm tra khoảng cách với player
@@ -55,6 +59,7 @@ public class NPC : MonoBehaviour
     {
         if (dialogUI != null && npcData != null)
         {
+            hasInteracted = true; // Đánh dấu đã tương tác
             dialogUI.ShowDialog(npcData.npcName, npcData.question, npcData.answers, this, npcData);
         }
         else
