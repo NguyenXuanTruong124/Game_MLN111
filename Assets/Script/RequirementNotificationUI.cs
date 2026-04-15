@@ -49,18 +49,18 @@ public class RequirementNotificationUI : MonoBehaviour
         int currentCoin = gameManager.GetCurrentCoinCount();
         int requiredCoin = gameManager.GetRequiredCoinCount();
 
-        string message = "⚠️ Chưa đủ điều kiện!\n\n";
+        string message = " Chưa đủ điều kiện!\n\n";
 
         // Hiển thị dựa vào game mode
         if (gameManager.gameMode == GameManager.GameMode.Level1)
         {
-            message += $"🍎 Food: {currentFood}/{requiredFood}\n";
-            message += $"👕 Cloth: {currentCloth}/{requiredCloth}";
+            message += $" Thực phẩm: {currentFood}/{requiredFood}\n";
+            message += $" Quần áo: {currentCloth}/{requiredCloth}";
         }
         else if (gameManager.gameMode == GameManager.GameMode.Level2)
         {
-            message += $"💰 Coin: {currentCoin}/{requiredCoin}\n";
-            message += $"👕 Cloth: {currentCloth}/{requiredCloth}";
+            message += $" Tiền: {currentCoin}/{requiredCoin}\n";
+            message += $" Chứng chỉ học thuật: {currentCloth}/{requiredCloth}";
         }
 
         return message;
