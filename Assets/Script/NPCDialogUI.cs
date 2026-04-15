@@ -6,8 +6,8 @@ public class NPCDialogUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI questionText;
-    [SerializeField] private Transform answersContainer;
-    [SerializeField] private Button answerButtonPrefab;
+    [SerializeField] private Button yesButton;
+    [SerializeField] private Button noButton;
     
     private NPC currentNPC;
 
@@ -23,20 +23,19 @@ public class NPCDialogUI : MonoBehaviour
         
         questionText.text = question;
 
-        // Xóa các câu trả lời cũ
-        foreach (Transform child in answersContainer)
+        // Setup 2 nút Yes/No
+        if (yesButton != null && answers.Length > 0)
         {
-            Destroy(child.gameObject);
+            yesButton.GetComponentInChildren<TextMeshProUGUI>().text = answers[0];
+            yesButton.onClick.RemoveAllListeners();
+            yesButton.onClick.AddListener(() => OnAnswerSelected(0, answers[0]));
         }
 
-        // Tạo nút cho mỗi câu trả lời
-        for (int i = 0; i < answers.Length; i++)
+        if (noButton != null && answers.Length > 1)
         {
-            Button answerButton = Instantiate(answerButtonPrefab, answersContainer);
-            answerButton.GetComponentInChildren<TextMeshProUGUI>().text = answers[i];
-            
-            int index = i;
-            answerButton.onClick.AddListener(() => OnAnswerSelected(index, answers[index]));
+            noButton.GetComponentInChildren<TextMeshProUGUI>().text = answers[1];
+            noButton.onClick.RemoveAllListeners();
+            noButton.onClick.AddListener(() => OnAnswerSelected(1, answers[1]));
         }
 
         dialogPanel.SetActive(true);
