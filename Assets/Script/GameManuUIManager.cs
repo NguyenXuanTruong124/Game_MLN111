@@ -6,8 +6,6 @@ public class GameMenuUIManager : MonoBehaviour
     public GameObject mapPanel;
     public GameObject guidePanel;
     public GameObject settingsPanel;
-    public GameObject exitConfirmPanel; // Panel xác nhận thoát
-    
 
     // Gọi khi bấm nút "Play"
     public void OnPlayButton()
@@ -45,28 +43,11 @@ public class GameMenuUIManager : MonoBehaviour
         settingsPanel.SetActive(!isActive);
     }
 
-    // Gọi khi bấm nút "Exit" - hiện panel xác nhận
+    // Bấm Exit thì thoát game ngay
     public void OnExitGame()
     {
-        if (exitConfirmPanel != null)
-        {
-            exitConfirmPanel.SetActive(true);
-        }
-    }
-
-    // Xác nhận thoát game
-    public void OnConfirmExit()
-    {
+        Debug.Log("Đang thoát game...");
         Application.Quit();
-    }
-
-    // Hủy bỏ thoát game
-    public void OnCancelExit()
-    {
-        if (exitConfirmPanel != null)
-        {
-            exitConfirmPanel.SetActive(false);
-        }
     }
 
     // Gọi khi bấm nút từng map

@@ -5228,7 +5228,6 @@ MonoBehaviour:
   mapPanel: {fileID: 101031515}
   guidePanel: {fileID: 1172983830}
   settingsPanel: {fileID: 448617912}
-  exitConfirmPanel: {fileID: 518314496}
 --- !u!4 &1919102404
 Transform:
   m_ObjectHideFlags: 0
