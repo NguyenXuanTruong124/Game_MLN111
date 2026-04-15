@@ -1941,7 +1941,7 @@ Transform:
   m_GameObject: {fileID: 241981711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 586.87, y: -10.59, z: 0}
+  m_LocalPosition: {x: 582.62, y: -10.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198637,8 +198637,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -2058168213
-  m_SortingLayer: 6
+  m_SortingLayerID: 1021103339
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1507499101, guid: 2f115d865b7b21c469cc2067d6e7c1fc, type: 3}
@@ -293733,6 +293733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2697427412211049453, guid: df0e974615c4d87448e4000b08ef04fd, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3891870035820196717, guid: df0e974615c4d87448e4000b08ef04fd, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.344
@@ -293900,7 +293904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4486629758898328845, guid: c9dce799581bdc74ba639ab66677d653, type: 3}
       propertyPath: requiredFoodCount
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486629758898328845, guid: c9dce799581bdc74ba639ab66677d653, type: 3}
+      propertyPath: requiredClothCount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4573769991961784320, guid: c9dce799581bdc74ba639ab66677d653, type: 3}
       propertyPath: m_Value
