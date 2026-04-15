@@ -17,5 +17,8 @@ MonoBehaviour:
   answers:
   - "\xDD ngh\u0129a v\xE0 ni\u1EC1m tin trong cu\u1ED9c s\u1ED1ng"
   - "Quy t\u1EAFc \u0111\u1EC3 ki\u1EC3m so\xE1t h\xE0nh vi con ng\u01B0\u1EDDi"
+  correctAnswerIndex: 1
+  rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: 2967346217087596414, guid: 68652675a69afbc4a98c853f526d9f1c, type: 3}
   interactionDistance: 2
+  rewardSpawnOffset: {x: 3, y: 0, z: 0}

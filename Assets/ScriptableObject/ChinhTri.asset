@@ -17,5 +17,8 @@ MonoBehaviour:
   answers:
   - "T\u1ED5 ch\u1EE9c x\xE3 h\u1ED9i v\xE0 duy tr\xEC tr\u1EADt t\u1EF1 "
   - "B\u1EA3o v\u1EC7 quy\u1EC1n l\u1EE3i c\u1EE7a m\u1ED9t nh\xF3m ng\u01B0\u1EDDi"
+  correctAnswerIndex: 1
+  rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: 3633728956530939003, guid: b2beaa9725a616c49ae017552e1ea35f, type: 3}
   interactionDistance: 4
+  rewardSpawnOffset: {x: 3, y: 0, z: 0}

@@ -17,5 +17,8 @@ MonoBehaviour:
   answers:
   - "Gi\u1EA3i th\xEDch th\u1EBF gi\u1EDBi m\u1ED9t c\xE1ch ch\xEDnh x\xE1c"
   - "Gi\xFAp con ng\u01B0\u1EDDi s\u1ED1ng ti\u1EC7n l\u1EE3i h\u01A1n"
+  correctAnswerIndex: 1
+  rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: 6989510903370079985, guid: e348918d203048d418644f0a647e8ad9, type: 3}
   interactionDistance: 2
+  rewardSpawnOffset: {x: 3, y: 0, z: 0}
