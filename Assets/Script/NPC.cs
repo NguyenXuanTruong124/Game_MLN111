@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private float interactionDistance = 2f;
     
     private bool playerInRange = false;
-    private bool hasInteracted = false; // Track xem đã tương tác chưa
+    private bool hasInteracted = false; // Khóa NPC khi trả lời đúng
     private Transform playerTransform;
     private NPCDialogUI dialogUI;
     private SpriteRenderer spriteRenderer;
@@ -39,7 +39,7 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        // Nếu đã tương tác rồi thì return
+        // Nếu đã trả lời đúng rồi thì ko cho tương tác
         if (hasInteracted) return;
         
         if (playerTransform == null || npcData == null || dialogUI == null) return;
@@ -59,13 +59,19 @@ public class NPC : MonoBehaviour
     {
         if (dialogUI != null && npcData != null)
         {
-            hasInteracted = true; // Đánh dấu đã tương tác
             dialogUI.ShowDialog(npcData.npcName, npcData.question, npcData.answers, this, npcData);
         }
         else
         {
             Debug.LogError("dialogUI hoặc npcData vẫn null!");
         }
+    }
+
+    // Method được gọi từ NPCDialogUI khi trả lời đúng
+    public void LockInteraction()
+    {
+        hasInteracted = true;
+        Debug.Log($"NPC {npcData.npcName} đã bị khóa!");
     }
 
     private void OnDrawGizmosSelected()

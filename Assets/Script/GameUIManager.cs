@@ -8,16 +8,8 @@ public class GameUIManager : MonoBehaviour
     public GameObject GameWin;
     public GameObject GamePause;
     public GameObject GameSettings;
-    public TextMeshProUGUI winRequirementText; // Hiển thị yêu cầu win
     
     private bool isPaused = false;
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-        UpdateWinRequirementUI();
-    }
 
     public void ShowGameOver()
     {
@@ -29,9 +21,7 @@ public class GameUIManager : MonoBehaviour
         }
     }
 
-
     public void ShowGameWin()
-    
     {
         if (AudioManager.Instance != null)
         {
@@ -39,10 +29,8 @@ public class GameUIManager : MonoBehaviour
         }
         GameWin.SetActive(true);
         Time.timeScale = 0f;
-        
     }
 
-   
     public void PauseGame()
     {
         isPaused = true;
@@ -66,7 +54,7 @@ public class GameUIManager : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("menu"); 
+        SceneManager.LoadScene("menu");
     }
 
     public void LoadNextLevel()
@@ -77,10 +65,10 @@ public class GameUIManager : MonoBehaviour
 
     public void OpenSettings()
     {
-
         bool isActive = GameSettings.activeSelf;
         GameSettings.SetActive(!isActive);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !GameOver.activeSelf && !GameWin.activeSelf)
@@ -96,15 +84,5 @@ public class GameUIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
-    }
-
-    private void UpdateWinRequirementUI()
-    {
-        if (winRequirementText != null && gameManager != null)
-        {
-            string requirement = $"Food: {gameManager.GetCurrentFoodCount()}/{gameManager.GetRequiredFoodCount()} | " +
-                                 $"Cloth: {gameManager.GetCurrentClothCount()}/{gameManager.GetRequiredClothCount()}";
-            winRequirementText.text = requirement;
-        }
     }
 }

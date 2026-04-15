@@ -15,7 +15,7 @@ public class NPCDialogUI : MonoBehaviour
     private NPCData currentNPCData;
     private bool isAnswered = false;
 
-    private void Awake()
+    private void Awake()    
     {
         if (dialogPanel != null)
             dialogPanel.SetActive(false);
@@ -70,9 +70,17 @@ public class NPCDialogUI : MonoBehaviour
         if (isCorrect)
         {
             SpawnReward();
+            // Khóa NPC sau khi trả lời đúng
+            if (currentNPC != null)
+                currentNPC.LockInteraction();
+            
+            StartCoroutine(CloseDialogAfterDelay());
         }
-
-        StartCoroutine(CloseDialogAfterDelay());
+        else
+        {
+            // Nếu sai, cho phép chọn lại sau 1 giây
+            StartCoroutine(AllowRetryAfterDelay());
+        }
     }
 
     private void HighlightSelectedButton(int answerIndex, bool isCorrect)
@@ -114,6 +122,31 @@ public class NPCDialogUI : MonoBehaviour
             Vector3 spawnPosition = currentNPC.transform.position + currentNPCData.rewardSpawnOffset;
             Instantiate(currentNPCData.rewardPrefab, spawnPosition, Quaternion.identity);
             Debug.Log("Reward spawned!");
+        }
+    }
+
+    private IEnumerator AllowRetryAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        
+        // Reset để cho phép chọn lại
+        isAnswered = false;
+        questionText.text = currentNPCData.question;
+        questionText.color = Color.white;
+        
+        // Bật lại nút
+        if (yesButton != null)
+        {
+            yesButton.interactable = true;
+            yesButton.GetComponent<Image>().color = Color.white;
+            yesButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
+        }
+        
+        if (noButton != null)
+        {
+            noButton.interactable = true;
+            noButton.GetComponent<Image>().color = Color.white;
+            noButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
         }
     }
 

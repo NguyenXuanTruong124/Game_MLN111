@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
@@ -8,18 +9,20 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI clothText;
+    [SerializeField] private TextMeshProUGUI bookText;
     
     // Win conditions
-    [SerializeField] private int requiredFoodCount = 5;      // Màn 1: cần 5 food
-    [SerializeField] private int requiredClothCount = 5;     // Cần 3 cloth
-    [SerializeField] private int requiredCoinCount = 5;      // Màn 2: cần coin
+    [SerializeField] private int requiredFoodCount = 5;
+    [SerializeField] private int requiredClothCount = 3;
+    [SerializeField] private int requiredCoinCount = 10;
+    [SerializeField] private int requiredKeyCount = 4;
     
     [SerializeField] private GameMode gameMode = GameMode.Level1;
 
     public enum GameMode
     {
         Level1,  // Food + Cloth
-        Level2   // Coin + Cloth
+        Level2   // Coin + Cloth + Key
     }
 
     void Start()
@@ -33,6 +36,11 @@ public class GameManager : MonoBehaviour
         UpdateScore();
     }
 
+    public void AddBookScore(int points)
+    {
+        score += points;
+        UpdateScore();
+    }
     public void AddClothScore(int points)
     {
         clothScore += points;
@@ -47,22 +55,31 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        scoreText.text = score.ToString();
-        clothText.text = clothScore.ToString(); 
+        // Màn 1: Hiển thị Food/Cloth
+        if (gameMode == GameMode.Level1)
+        {
+            scoreText.text = $"{score}/{requiredFoodCount}";
+            clothText.text = $"{clothScore}/{requiredClothCount}";
+        }
+        // Màn 2: Hiển thị Coin/Cloth
+        else if (gameMode == GameMode.Level2)
+        {
+            scoreText.text = $"{coinScore}/{requiredCoinCount}";
+            bookText.text = $"{score}/{requiredKeyCount}";
+        }
     }
 
-    // Kiểm tra đã đủ điều kiện win chưa
     public bool CanWin()
     {
         if (gameMode == GameMode.Level1)
         {
-            // Màn 1: Cần đủ Food và Cloth
+            // Màn 1: Cần Food + Cloth
             return score >= requiredFoodCount && clothScore >= requiredClothCount;
         }
         else if (gameMode == GameMode.Level2)
         {
-            // Màn 2: Cần đủ Coin và Cloth
-            return coinScore >= requiredCoinCount && clothScore >= requiredClothCount;
+            // Màn 2: Cần Coin + Cloth + Key (4 cái)
+            return coinScore >= requiredCoinCount && clothScore >= requiredClothCount && score >= requiredKeyCount;
         }
 
         return false;
@@ -71,7 +88,9 @@ public class GameManager : MonoBehaviour
     public int GetRequiredFoodCount() => requiredFoodCount;
     public int GetRequiredClothCount() => requiredClothCount;
     public int GetRequiredCoinCount() => requiredCoinCount;
+    public int GetRequiredKeyCount() => requiredKeyCount;
     public int GetCurrentFoodCount() => score;
     public int GetCurrentClothCount() => clothScore;
     public int GetCurrentCoinCount() => coinScore;
+    public int GetCurrentKeyCount() => score; // Dùng score để track key (tùy cách quản lý)
 }

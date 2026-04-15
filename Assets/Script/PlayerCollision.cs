@@ -29,7 +29,14 @@ public class PlayerCollision : MonoBehaviour
         {
             AudioManager.Instance.PlayCoin();
             Destroy(collision.gameObject);
-            gameManager.AddScore(1);
+            gameManager.AddCoinScore(1);
+        }
+
+        else if (collision.CompareTag("Book"))
+        {
+            AudioManager.Instance.PlayCoin();
+            Destroy(collision.gameObject);
+            gameManager.AddBookScore(1);
         }
 
         else if (collision.CompareTag("Key"))
