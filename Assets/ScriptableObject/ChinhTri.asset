@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74fb8dbf0f3869d46a35140db62f54b7, type: 3}
+  m_Name: ChinhTri
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  npcName: ChinhTriGia
+  question: "M\u1EE5c \u0111\xEDch ch\xEDnh c\u1EE7a ch\xEDnh tr\u1ECB l\xE0 g\xEC? "
+  answers:
+  - "T\u1ED5 ch\u1EE9c x\xE3 h\u1ED9i v\xE0 duy tr\xEC tr\u1EADt t\u1EF1 "
+  - "B\u1EA3o v\u1EC7 quy\u1EC1n l\u1EE3i c\u1EE7a m\u1ED9t nh\xF3m ng\u01B0\u1EDDi"
+  npcSprite: {fileID: 3633728956530939003, guid: b2beaa9725a616c49ae017552e1ea35f, type: 3}
+  interactionDistance: 4

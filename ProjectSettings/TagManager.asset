@@ -12,6 +12,7 @@ TagManager:
   - Cloth
   - Trap
   - Ground
+  - Coin
   layers:
   - Default
   - TransparentFX

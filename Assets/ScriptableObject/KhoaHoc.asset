@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74fb8dbf0f3869d46a35140db62f54b7, type: 3}
+  m_Name: KhoaHoc
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  npcName: KhoaHocGia
+  question: "Khoa h\u1ECDc quan tr\u1ECDng nh\u1EA5t \u1EDF \u0111i\u1EC1u g\xEC? "
+  answers:
+  - "Gi\u1EA3i th\xEDch th\u1EBF gi\u1EDBi m\u1ED9t c\xE1ch ch\xEDnh x\xE1c"
+  - "Gi\xFAp con ng\u01B0\u1EDDi s\u1ED1ng ti\u1EC7n l\u1EE3i h\u01A1n"
+  npcSprite: {fileID: 6989510903370079985, guid: e348918d203048d418644f0a647e8ad9, type: 3}
+  interactionDistance: 2

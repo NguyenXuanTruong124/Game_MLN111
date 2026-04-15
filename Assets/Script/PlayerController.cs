@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        Debug.Log($"isGrounded: {isGrounded}, Velocity X: {rb.linearVelocity.x}");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour
 
         float moveX = Input.GetAxis("Horizontal");
         bool isRunning = Mathf.Abs(moveX) > 0.1f && isGrounded;
-        Debug.Log($"moveX: {moveX}, isRunning: {isRunning}");
 
         if (isRunning)
         {
@@ -92,7 +90,6 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimation()
     {
         bool isRunning = Mathf.Abs(rb.linearVelocity.x) > 0.1f && isGrounded;
-        Debug.Log($"UpdateAnimation - isRunning: {isRunning}");
 
         animator.SetBool("isRunning", isRunning);
     }

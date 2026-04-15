@@ -26,16 +26,19 @@ public class PlayerCollision : MonoBehaviour
             gameManager.AddClothScore(1);
         }
 
+        else if (collision.CompareTag("Coin"))
+        {
+            AudioManager.Instance.PlayCoin();
+            Destroy(collision.gameObject);
+            gameManager.AddScore(1);
+        }
+
         else if (collision.CompareTag("Key"))
         {
-
             Debug.Log("Player collected the key — WIN!");
-
             Destroy(collision.gameObject);
             FindAnyObjectByType<GameUIManager>().ShowGameWin();
             AudioManager.Instance.StopAllEffects();
-
-
         }
     }
 }
