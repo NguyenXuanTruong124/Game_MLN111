@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int requiredCoinCount = 10;
     [SerializeField] private int requiredKeyCount = 4;
     
-    [SerializeField] private GameMode gameMode = GameMode.Level1;
+    public GameMode gameMode = GameMode.Level1; // Thay đổi từ [SerializeField] private sang public
 
     public enum GameMode
     {

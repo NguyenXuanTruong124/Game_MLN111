@@ -6,54 +6,73 @@ public class GameMenuUIManager : MonoBehaviour
     public GameObject mapPanel;
     public GameObject guidePanel;
     public GameObject settingsPanel;
+    public GameObject exitConfirmPanel; // Panel xác nhận thoát
     
 
     // Gọi khi bấm nút "Play"
     public void OnPlayButton()
     {
-        mapPanel.SetActive(true);     // Hiện panel chọn map
-        guidePanel.SetActive(false);  // Tắt panel hướng dẫn nếu đang mở
+        mapPanel.SetActive(true);
+        guidePanel.SetActive(false);
     }
 
     // Gọi khi bấm nút "Guide"
     public void OnGuideButton()
     {
-        guidePanel.SetActive(true);   // Hiện hướng dẫn
-        mapPanel.SetActive(false);    // Tắt map nếu đang mở
+        guidePanel.SetActive(true);
+        mapPanel.SetActive(false);
     }
 
     // Gọi khi bấm nút "Exit" trong panel hướng dẫn
     public void OnExitGuide()
     {
-        guidePanel.SetActive(false);  // Tắt hướng dẫn
+        guidePanel.SetActive(false);
     }
+
     public void OnExitMapPanel()
     {
-        mapPanel.SetActive(false);  // Tắt hướng dẫn
+        mapPanel.SetActive(false);
     }
+
     public void OnBackGroundSOund()
     {
-        AudioManager.Instance.ToggleMusic(); // Bật/Tắt nhạc nền
+        AudioManager.Instance.ToggleMusic();
     }
+
     public void OnShowSettings()
     {
-        
-
-        // Toggle: nếu đang bật thì tắt, đang tắt thì bật
         bool isActive = settingsPanel.activeSelf;
         settingsPanel.SetActive(!isActive);
     }
 
+    // Gọi khi bấm nút "Exit" - hiện panel xác nhận
     public void OnExitGame()
     {
-        Application.Quit(); // Thoát game
+        if (exitConfirmPanel != null)
+        {
+            exitConfirmPanel.SetActive(true);
+        }
     }
 
-    // Gọi khi bấm nút từng map (ví dụ map1, map2,...)
+    // Xác nhận thoát game
+    public void OnConfirmExit()
+    {
+        Application.Quit();
+    }
+
+    // Hủy bỏ thoát game
+    public void OnCancelExit()
+    {
+        if (exitConfirmPanel != null)
+        {
+            exitConfirmPanel.SetActive(false);
+        }
+    }
+
+    // Gọi khi bấm nút từng map
     public void LoadSceneByName(string sceneName)
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
-        
     }
 }

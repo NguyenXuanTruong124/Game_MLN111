@@ -6,24 +6,28 @@ public class NPC : MonoBehaviour
     [SerializeField] private float interactionDistance = 2f;
     
     private bool playerInRange = false;
-    private bool hasInteracted = false; // Khóa NPC khi trả lời đúng
+    private bool hasInteracted = false;
     private Transform playerTransform;
     private NPCDialogUI dialogUI;
     private SpriteRenderer spriteRenderer;
+    private GameManager gameManager;
 
     private void Start()
     {
         playerTransform = FindAnyObjectByType<PlayerController>().transform;
         dialogUI = FindAnyObjectByType<NPCDialogUI>();
+        gameManager = FindAnyObjectByType<GameManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (playerTransform == null)
             Debug.LogError("PlayerController không tìm thấy!");
         
         if (dialogUI == null)
-            Debug.LogError("NPCDialogUI không tìm thấy! Hãy tạo GameObject có script NPCDialogUI");
+            Debug.LogError("NPCDialogUI không tìm thấy! Hãy tạo GameObject có script NPCDialogUI");    
 
-        // Set sprite từ NPCData
+        if (gameManager == null)
+            Debug.LogError("GameManager không tìm thấy!");
+
         if (npcData != null && npcData.npcSprite != null)
         {
             spriteRenderer.sprite = npcData.npcSprite;
@@ -39,16 +43,13 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        // Nếu đã trả lời đúng rồi thì ko cho tương tác
         if (hasInteracted) return;
         
         if (playerTransform == null || npcData == null || dialogUI == null) return;
 
-        // Kiểm tra khoảng cách với player
         float distance = Vector2.Distance(transform.position, playerTransform.position);
         playerInRange = distance <= interactionDistance;
 
-        // Nếu gần và ấn F
         if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             ShowDialog();
@@ -67,7 +68,6 @@ public class NPC : MonoBehaviour
         }
     }
 
-    // Method được gọi từ NPCDialogUI khi trả lời đúng
     public void LockInteraction()
     {
         hasInteracted = true;

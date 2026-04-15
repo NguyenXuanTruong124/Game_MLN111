@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     private GameManager gameManager;
+    private RequirementNotificationUI requirementUI;
 
     void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
+        requirementUI = FindAnyObjectByType<RequirementNotificationUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +43,6 @@ public class PlayerCollision : MonoBehaviour
 
         else if (collision.CompareTag("Key"))
         {
-            // Kiểm tra điều kiện win
             if (gameManager.CanWin())
             {
                 Debug.Log("Player collected the key — WIN!");
@@ -52,8 +53,11 @@ public class PlayerCollision : MonoBehaviour
             else
             {
                 Debug.Log("Bạn chưa đủ item để nhặt key!");
-                // Có thể thêm hiệu ứng/âm thanh báo lỗi
-                AudioManager.Instance.PlayCoin(); // Hoặc sound khác
+                // Hiển thị thông báo yêu cầu
+                if (requirementUI != null)
+                {
+                    requirementUI.ShowRequirement();
+                }
             }
         }
     }
