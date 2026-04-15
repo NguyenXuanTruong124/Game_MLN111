@@ -7,7 +7,6 @@ public class PlayerCollision : MonoBehaviour
     void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,10 +34,20 @@ public class PlayerCollision : MonoBehaviour
 
         else if (collision.CompareTag("Key"))
         {
-            Debug.Log("Player collected the key — WIN!");
-            Destroy(collision.gameObject);
-            FindAnyObjectByType<GameUIManager>().ShowGameWin();
-            AudioManager.Instance.StopAllEffects();
+            // Kiểm tra điều kiện win
+            if (gameManager.CanWin())
+            {
+                Debug.Log("Player collected the key — WIN!");
+                Destroy(collision.gameObject);
+                FindAnyObjectByType<GameUIManager>().ShowGameWin();
+                AudioManager.Instance.StopAllEffects();
+            }
+            else
+            {
+                Debug.Log("Bạn chưa đủ item để nhặt key!");
+                // Có thể thêm hiệu ứng/âm thanh báo lỗi
+                AudioManager.Instance.PlayCoin(); // Hoặc sound khác
+            }
         }
     }
 }

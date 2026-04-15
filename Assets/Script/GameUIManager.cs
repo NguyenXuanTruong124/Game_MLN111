@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -7,9 +8,16 @@ public class GameUIManager : MonoBehaviour
     public GameObject GameWin;
     public GameObject GamePause;
     public GameObject GameSettings;
+    public TextMeshProUGUI winRequirementText; // Hiển thị yêu cầu win
     
     private bool isPaused = false;
+    private GameManager gameManager;
 
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+        UpdateWinRequirementUI();
+    }
 
     public void ShowGameOver()
     {
@@ -61,6 +69,12 @@ public class GameUIManager : MonoBehaviour
         SceneManager.LoadScene("menu"); 
     }
 
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void OpenSettings()
     {
 
@@ -82,5 +96,15 @@ public class GameUIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void UpdateWinRequirementUI()
+    {
+        if (winRequirementText != null && gameManager != null)
+        {
+            string requirement = $"Food: {gameManager.GetCurrentFoodCount()}/{gameManager.GetRequiredFoodCount()} | " +
+                                 $"Cloth: {gameManager.GetCurrentClothCount()}/{gameManager.GetRequiredClothCount()}";
+            winRequirementText.text = requirement;
+        }
     }
 }
