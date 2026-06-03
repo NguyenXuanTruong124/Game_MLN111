@@ -13,10 +13,21 @@ MonoBehaviour:
   m_Name: KhoaHoc
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   npcName: KhoaHocGia
-  question: "Khoa h\u1ECDc quan tr\u1ECDng nh\u1EA5t \u1EDF \u0111i\u1EC1u g\xEC? "
+  question: "B\u1EA3n ch\u1EA5t c\u1EE7a c\xE2u n\xF3i \u201CCon ng\u01B0\u1EDDi
+    ph\u1EA3i c\xF3 \u0103n, \u1EDF, m\u1EB7c... r\u1ED3i m\u1EDBi l\xE0m khoa h\u1ECDc...\u201D
+    qua lu\u1EADn \u0111i\u1EC3m: \"C\xE1c quan h\u1EC7 v\u1EADt ch\u1EA5t trong
+    kinh t\u1EBF s\u1EBD quy\u1EBFt \u0111\u1ECBnh c\xE1c quan h\u1EC7 tinh th\u1EA7n
+    trong x\xE3 h\u1ED9i\". T\u1EA1i sao quan h\u1EC7 v\u1EADt ch\u1EA5t l\u1EA1i
+    lu\xF4n \u0111i tr\u01B0\u1EDBc v\xE0 quy\u1EBFt \u0111\u1ECBnh quan h\u1EC7
+    tinh th\u1EA7n?"
   answers:
-  - "Gi\u1EA3i th\xEDch th\u1EBF gi\u1EDBi m\u1ED9t c\xE1ch ch\xEDnh x\xE1c"
-  - "Gi\xFAp con ng\u01B0\u1EDDi s\u1ED1ng ti\u1EC7n l\u1EE3i h\u01A1n"
+  - " V\xEC c\xE1c nghi\xEAn c\u1EE9u khoa h\u1ECDc ch\u1EC9 c\xF3 gi\xE1 tr\u1ECB
+    khi n\xF3 \u0111\u01B0\u1EE3c t\xE0i tr\u1EE3 ho\xE0n to\xE0n b\u1EDFi c\xE1c
+    Quan h\u1EC7 s\u1EA3n xu\u1EA5t t\xE0n d\u01B0 t\u1EEB x\xE3 h\u1ED9i c\u0169."
+  - " V\xEC ph\u01B0\u01A1ng th\u1EE9c s\u1EA3n xu\u1EA5t v\xE0 duy tr\xEC s\u1EF1
+    s\u1ED1ng l\xE0 \u0111i\u1EC1u ki\u1EC7n sinh t\u1ED3n c\u01A1 b\u1EA3n nh\u1EA5t,
+    t\u1EEB n\u1EC1n t\u1EA3ng v\u1EADt ch\u1EA5t \u0111\xF3 con ng\u01B0\u1EDDi
+    m\u1EDBi n\u1EA3y sinh nhu c\u1EA7u l\xFD lu\u1EADn v\xE0 nghi\xEAn c\u1EE9u."
   correctAnswerIndex: 1
   rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: 6989510903370079985, guid: e348918d203048d418644f0a647e8ad9, type: 3}

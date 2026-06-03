@@ -13,10 +13,20 @@ MonoBehaviour:
   m_Name: TonGiao
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   npcName: TonGiaoGia
-  question: "T\xF4n gi\xE1o mang l\u1EA1i \u0111i\u1EC1u g\xEC cho con ng\u01B0\u1EDDi? "
+  question: "Ki\u1EBFn tr\xFAc th\u01B0\u1EE3ng t\u1EA7ng g\u1ED3m 2 ph\u1EA7n: Thi\u1EBFt
+    ch\u1EBF x\xE3 h\u1ED9i (v\xED d\u1EE5: Gi\xE1o h\u1ED9i) v\xE0 Quan \u0111i\u1EC3m,
+    t\u01B0 t\u01B0\u1EDFng (v\xED d\u1EE5: T\xF4n gi\xE1o). M\u1ED1i quan h\u1EC7
+    gi\u1EEFa \"Gi\xE1o h\u1ED9i\" v\xE0 \"T\xF4n gi\xE1o\" \u0111\u01B0\u1EE3c Tri\u1EBFt
+    h\u1ECDc M\xE1c - L\xEA-nin nh\xECn nh\u1EADn nh\u01B0 th\u1EBF n\xE0o \u0111\u1EC3
+    t\u1EA1o n\xEAn s\u1EE9c m\u1EA1nh c\u1EE7a Ki\u1EBFn tr\xFAc th\u01B0\u1EE3ng
+    t\u1EA7ng?"
   answers:
-  - "\xDD ngh\u0129a v\xE0 ni\u1EC1m tin trong cu\u1ED9c s\u1ED1ng"
-  - "Quy t\u1EAFc \u0111\u1EC3 ki\u1EC3m so\xE1t h\xE0nh vi con ng\u01B0\u1EDDi"
+  - "Ch\xFAng l\xE0 hai b\u1ED9 ph\u1EADn \u0111\u1ED9c l\u1EADp, t\xE1ch r\u1EDDi
+    ho\xE0n to\xE0n v\xE0 ch\u1EC9 t\u01B0\u01A1ng t\xE1c khi C\u01A1 s\u1EDF h\u1EA1
+    t\u1EA7ng c\xF3 s\u1EF1 thay \u0111\u1ED5i mang t\xEDnh c\xE1ch m\u1EA1ng."
+  - "Ch\xFAng kh\xF4ng \u0111\u1EE9ng ri\xEAng l\u1EBB m\xE0 lu\xF4n c\xF3 s\u1EF1
+    li\xEAn k\u1EBFt, h\xF2a quy\u1EC7n v\xE0 t\xE1c \u0111\u1ED9ng qua l\u1EA1i
+    ch\u1EB7t ch\u1EBD v\u1EDBi nhau \u0111\u1EC3 c\xF9ng t\u1ED3n t\u1EA1i."
   correctAnswerIndex: 1
   rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: 2967346217087596414, guid: 68652675a69afbc4a98c853f526d9f1c, type: 3}

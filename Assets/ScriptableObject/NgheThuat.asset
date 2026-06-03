@@ -13,10 +13,20 @@ MonoBehaviour:
   m_Name: NgheThuat
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   npcName: NgheThuatGia
-  question: "Ngh\u1EC7 thu\u1EADt t\u1ED3n t\u1EA1i \u0111\u1EC3 l\xE0m g\xEC? "
+  question: "Gi\u1EA3 s\u1EED trong x\xE3 h\u1ED9i xu\u1EA5t hi\u1EC7n m\u1ED9t tr\xE0o
+    l\u01B0u ngh\u1EC7 thu\u1EADt m\u1EDBi, ti\u1EBFn b\u1ED9, ph\u1EA3n \xE1nh xu
+    h\u01B0\u1EDBng ph\xE1t tri\u1EC3n c\u1EE7a t\u01B0\u01A1ng lai nh\u01B0ng l\u1EA1i
+    b\u1ECB h\u1EC7 th\u1ED1ng lu\u1EADt ph\xE1p c\u0169 k\xECm h\xE3m. S\u1EF1 xung
+    \u0111\u1ED9t n\xE0y ph\u1EA3n \xE1nh m\u1ED1i quan h\u1EC7 n\xE0o b\xEAn d\u01B0\u1EDBi
+    b\u1EC1 m\u1EB7t x\xE3 h\u1ED9i?"
   answers:
-  - "\u0110\u1EC3 th\u1EC3 hi\u1EC7n c\u1EA3m x\xFAc v\xE0 c\xE1i \u0111\u1EB9p"
-  - "\u0110\u1EC3 ph\u1EE5c v\u1EE5 nhu c\u1EA7u th\u1EF1c t\u1EBF c\u1EE7a con ng\u01B0\u1EDDi"
+  - " S\u1EF1 \u0111\u1ED3ng nh\u1EA5t v\xE0 ph\xE1t tri\u1EC3n \u0111\u1ED3ng b\u1ED9
+    tuy\u1EC7t \u0111\u1ED1i, kh\xF4ng c\xF3 \u0111\u1ED9 tr\u1EC5 gi\u1EEFa kinh
+    t\u1EBF v\xE0 \u0111\u1EDDi s\u1ED1ng tinh th\u1EA7n."
+  - "S\u1EF1 m\xE2u thu\u1EABn gi\u1EEFa Quan h\u1EC7 s\u1EA3n xu\u1EA5t m\u1EA7m
+    m\u1ED1ng \u0111ang h\xECnh th\xE0nh v\u1EDBi m\u1ED9t thi\u1EBFt ch\u1EBF x\xE3
+    h\u1ED9i c\u0169 thu\u1ED9c Ki\u1EBFn tr\xFAc th\u01B0\u1EE3ng t\u1EA7ng l\u1ED7i
+    th\u1EDDi."
   correctAnswerIndex: 1
   rewardPrefab: {fileID: 2598350570237772567, guid: 20424e2902274234992fb31dd34b143c, type: 3}
   npcSprite: {fileID: -6491207743619416617, guid: ec158a447ca08de42a5ab27bd4c8e5b5, type: 3}
